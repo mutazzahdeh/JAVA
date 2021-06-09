@@ -7,11 +7,13 @@ public class StringManipulation {
 
     public Integer getIndexOrNull(String str, char ch) {
         Integer value = str.indexOf(ch);
+if (value==-1)value=null;
         return value;
     }
 
     public Integer getIndexOrNull(String str, String str2) {
         Integer value = str.indexOf(str2);
+if (value==-1)value=null;
         return value;
     }
 
