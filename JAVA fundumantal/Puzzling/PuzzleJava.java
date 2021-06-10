@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 public class PuzzleJava{
-    public static void main(String[] argu){
+    public static void main(String[] args){
       int[] arr={3,5,1,2,7,9,8,13,25,32};
       
       System.out.println(Arrays.toString(arryint(arr).toArray()));
