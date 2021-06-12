@@ -13,7 +13,7 @@ for(int i = 0; i < myList.size(); i++) {
 }
  }
  catch (Exception e) {
- System.out.println("some thing reong");
+ System.out.println("something Wrong");
  }
 
     

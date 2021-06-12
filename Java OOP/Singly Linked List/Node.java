@@ -4,6 +4,6 @@ public class Node {
     public Node(int value) {
         // your code her
         this.value=value;
-        this.next=null;
+        this.next=null; 
     }
 }
