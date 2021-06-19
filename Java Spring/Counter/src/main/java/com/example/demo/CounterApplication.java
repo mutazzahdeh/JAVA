@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @SpringBootApplication
 public class CounterApplication {
-private static int count=0;
+private static int counter=0;
 	public static void main(String[] args) {
 		SpringApplication.run(CounterApplication.class, args);
 	}
@@ -18,7 +18,7 @@ private static int count=0;
     public String index(HttpSession session) {
     	
            
-           count++;
+    	counter++;
           
           
         return "index.jsp";
@@ -27,7 +27,7 @@ private static int count=0;
     @RequestMapping("/counter")
     public String index2(HttpSession session) {
     	
-		session.setAttribute("count", count);
+		session.setAttribute("count", counter);
     	
         return "counter.jsp";
     }
