@@ -1,5 +1,6 @@
 package com.codingdojo.services;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -65,22 +66,18 @@ public class Lookifyservice {
 			 return lookifyRepository.save(lookify1);
 		}
 	  public List<Lookify> findtopten() {
-				List<Lookify> allSongs = lookifyRepository.findAll();
-				Collections.sort(allSongs, Comparator.comparingDouble(Lookify::getRating).reversed()); //sort the list in descinding order according to the rating
-				for (int i = allSongs.size()-1; i >0; i--) { //traverse on the array from the last and remove all the indexes that are large than 9 because we want only the top 10 songs
-					if(allSongs.size() <10) { //if the list is already contains less than 10 songs so return the list directly without removing from it.
-						return allSongs;
-					}
-					if (i !=9) {
-						allSongs.remove(i);
-					}
-					else {
-						return allSongs;
+				List<Lookify>  lookify= lookifyRepository.findAll();
+				List<Lookify> lookify2 = new ArrayList<Lookify>() ;
+				for(int i=10;i>=1;i--) {
+					if(lookify2.size()==10)return lookify2;
+					
+					for(int j=0;j<lookify.size();j++) {
+						System.out.println(lookify.get(j).getRating());
+						if(lookify.get(j).getRating()==i ) {lookify2.add(lookify.get(j));}
+						if(lookify2.size()==10)return lookify2;
 					}
 				}
-
-				return allSongs;
-
+				return lookify2;
 			}
 		
 	 
